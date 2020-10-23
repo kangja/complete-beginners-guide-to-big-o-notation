@@ -116,3 +116,47 @@ function countupAndDown(n) {
 
 
 // YET ANOTHER EXAMPLE
+function printAllPairs(n) {
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      console.log(i, j)
+    }
+  }
+}
+// we will have to run n^2 operations since there are o(n) operations inside of an o(n) operations. Therefore, when we have O(n) inside of an O(n) operation or a nested loop, we are talking about O(n * n) or O(n^2). This is called quadratic time. 
+
+//we should avoid writing algorithms that have a time complexity of n^2. 
+
+
+
+//Simplifying Big O Expressions
+//when determining the time complexity of an algorithm, there are some helpful rule of thumbs for big O expressions. 
+
+
+//Constants don't matter!
+//O(2n)? It just becomes O(n).
+//O(500)? It just becomes O(1).
+//O(13^2)? It's just O(n^2).
+
+// Similarly, small terms don't matter 
+//O(n+10) becomes O(n)
+//O(1000n + 50) becomes O(n)
+//O(n^2 + 5n + 8) becomes O(n^2) becuase smaller terms don't matter. 5n is way way smaller than n^2. Try plugging in very large number for n and just compare the difference between 5n and n^2. 
+
+
+//A couple more examples
+function logAtLeast5(n) {
+  for (let i = 1; i <= Math.max(5, n); i++) {
+    console.log(i);
+  }
+}
+//The function loops 5 times only if the value of n is less than 5. the answer is its time complexity of O(n). 
+
+
+
+function logAtMost5(n) {
+  for (let i = i; i <= Math.min(5, n); i++) {
+    console.log(i);
+  }
+}
+//if n is 10, we are looping 5 times. if n is 1000, we loop 5 times. If n is 2, we loop 2 times. The time complexity is O(1). We loop n times if n is less than 5. But after we hit 5, when n is 6,7,8, all the way up to million, we are going to be looping 5 times very time. It generally takes the exact same number of operations no matter how large n is. 
