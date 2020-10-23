@@ -7,18 +7,18 @@
 // suppose we want to write a function that calculates the sum of all numbers from 1 up to (and including) some number n.
 
 //first version
-// function addUpTo(n) {
-//   let total = 0;
-//   for (let i = 1; i <= n; i++) {
-//     total += i;
-//   }
-//   return total;
-// }
+function addUpTo(n) {
+  let total = 0;
+  for (let i = 1; i <= n; i++) {
+    total += i;
+  }
+  return total;
+}
 
 //second version
-// function addUpTo(n) {
-//   return n * (n + 1) / 2;
-// }
+function addUpTo(n) {
+  return n * (n + 1) / 2;
+}
 
 //WHICH ONE IS BETTER? AND WHAT DOES BETTER MEAN?
 // faster? less memory-intensive? more readable? 
@@ -26,18 +26,18 @@
 // we will focus on speed(time complexity)
 
 //why not use timers?
-// function addUpTo(n) {
-//   let total = 0;
-//   for (let i = 1; i <= n; i++) {
-//     total += i;
-//   }
-//   return total;
-// }
+function addUpTo(n) {
+  let total = 0;
+  for (let i = 1; i <= n; i++) {
+    total += i;
+  }
+  return total;
+}
 
-// let t1 = performance.now();
-// addUpTo(1000000000);
-// let t2 = performance.now();
-// console.log(`Time elasped: ${(t2 - t1) / 1000} seconds.`);
+let t1 = performance.now();
+addUpTo(1000000000);
+let t2 = performance.now();
+console.log(`Time elasped: ${(t2 - t1) / 1000} seconds.`);
 
 //The problem with time 
 //different machines will record different times.
@@ -49,20 +49,20 @@
 
 //Counting operations 
 // EX)
-// function addUpTo(n) {
-//   return n * (n + 1) / 2;
-// }
+function addUpTo(n) {
+  return n * (n + 1) / 2;
+}
 //This example has 1 multiplication, 1 addition, and 1 division. It doesn't matter how large n is. Whether n is million or 5, we have the same number of addition, multiplication, and division. It doesn't change. Again, we have 3 simple operations, regardless of the size of n. 
 
 
 //EX)
-// function addUpTo(n) {
-//   let total = 0; //1 assignment
-//   for (let i = 1; i <= n; i++) { //1 assignment, n comparisons, n additions and n assignments
-//     total += i; //we have n additions inside the loop. if n is million, we are adding million times. //n additions, n assignments
-//   }
-//   return total;
-// }
+function addUpTo(n) {
+  let total = 0; //1 assignment
+  for (let i = 1; i <= n; i++) { //1 assignment, n comparisons, n additions and n assignments
+    total += i; //we have n additions inside the loop. if n is million, we are adding million times. //n additions, n assignments
+  }
+  return total;
+}
 //this loop is dependent on the value of n. as n grows larger and larger, eventually approaching infinity, the number of operations we will have here that we have to do will grow at least with proportion to n. Therefore, depending on what we count, the number of operations can be as low as 2n or as high as 5n+2. But regardless of the exact number, the number of operations grows roughly proportionally with n. 
 
 
@@ -79,20 +79,20 @@
 // when we say the algorithm has O(f(n)), we mean that as n grows, the amount of operations/time it takes, is going to grow in proportion with this function. 
 
 //EXAMPLE
-// function addUpTo(n) {
-//   return n * (n + 1) / 2;
-// }
+function addUpTo(n) {
+  return n * (n + 1) / 2;
+}
 //again, this function ALWAYS has 3 operations; therefore, it is O(1). What this means is as n grows, if n is 10, million, or trillion, it doesn't matter. The number of operations we have to do STAYS the SAME! If we were to graph this, we would have a flat line. There is NO INCREASE in the amount of time it takes and the number of operations as we move toward the larger n. 
 
 
 
-// function addUpTo(n) {
-//   let total = 0; //1 assignment
-//   for (let i = 1; i <= n; i++) { //1 assignment, n comparisons, n additions and n assignments
-//     total += i; //we have n additions inside the loop. if n is million, we are adding million times. //n additions, n assignments
-//   }
-//   return total;
-// }
+function addUpTo(n) {
+  let total = 0; //1 assignment
+  for (let i = 1; i <= n; i++) { //1 assignment, n comparisons, n additions and n assignments
+    total += i; //we have n additions inside the loop. if n is million, we are adding million times. //n additions, n assignments
+  }
+  return total;
+}
 //number of operations is going to grow in proportion to n. Some multiple of n. It doesn't matter it's 10n, 1n, or 50,000n. We just want the general trend. As n grows larger, so does the number of operations. This is called linear time. The graph is linear. As n grows, the number of operations it takes is going to grow in proportion. 
 
 
@@ -112,7 +112,7 @@ function countupAndDown(n) {
   }
   console.log("Back down. Bye!");
 }
-// this function has two loops. The first one is O(n) and the second one is also O(n). You might say this has a time complexity of O(2n), but we only care about the big picture. We simplify down to O(n). It doesn't matter. Even if it's 2n or 1000n, it doesn't matter because as n grows to infinity, the coefficients in front whether it's 10 or 2 million, it's so insignificant, we just describe it as o(n).
+// this function has two loops. The first one is O(n) and the second one is also O(n). You might say this has a time complexity of O(2n), but we ONLY care about the big picture. We simplify down to O(n). It doesn't matter. Even if it's 2n or 1000n, it doesn't matter because as n grows to infinity, the coefficients in front whether it's 10 or 2 million, it's so insignificant, we just describe it as o(n).
 
 
 // YET ANOTHER EXAMPLE
