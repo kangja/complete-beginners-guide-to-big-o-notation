@@ -6,7 +6,6 @@
 //An example.=
 // suppose we want to write a function that calculates the sum of all numbers from 1 up to (and including) some number n.
 
-
 //first version
 // function addUpTo(n) {
 //   let total = 0;
@@ -68,3 +67,34 @@
 
 
 
+//INTRODUCING...BIG O
+//Big o notation is a way to formalize fuzzy counting. We are using fuzzy because we are not being specific and we are just assuming way out and imagining what the number of operations looks like as n gets larger. 
+//It allows us to talk formally about how the runtime of an algorithm grows as the inputs grow. We won't care about the details, only the trends.
+
+//BIO O DEFINITION
+//we say that an algorithm is O(f(n)) if the number of simple oeprations the computer has to do is eventually less than a const times f(n), as n increases.
+//f(n) could be linear (f(n) = n )
+//f(n) could be quadratic (f(n) = n^2)
+//f(n) could be constant (f(n) = 1)
+// when we say the algorithm has O(f(n)), we mean that as n grows, the amount of operations/time it takes, is going to grow in proportion with this function. 
+
+//EXAMPLE
+// function addUpTo(n) {
+//   return n * (n + 1) / 2;
+// }
+//again, this function ALWAYS has 3 operations; therefore, it is O(1). What this means is as n grows, if n is 10, million, or trillion, it doesn't matter. The number of operations we have to do STAYS the SAME! If we were to graph this, we would have a flat line. There is NO INCREASE in the amount of time it takes and the number of operations as we move toward the larger n. 
+
+
+
+// function addUpTo(n) {
+//   let total = 0; //1 assignment
+//   for (let i = 1; i <= n; i++) { //1 assignment, n comparisons, n additions and n assignments
+//     total += i; //we have n additions inside the loop. if n is million, we are adding million times. //n additions, n assignments
+//   }
+//   return total;
+// }
+//number of operations is going to grow in proportion to n. Some multiple of n. It doesn't matter it's 10n, 1n, or 50,000n. We just want the general trend. As n grows larger, so does the number of operations. This is called linear time. The graph is linear. As n grows, the number of operations it takes is going to grow in proportion. 
+
+
+
+//ANOTHER EXAMPLE 
