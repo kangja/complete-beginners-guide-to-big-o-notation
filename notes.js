@@ -98,3 +98,21 @@
 
 
 //ANOTHER EXAMPLE 
+function countupAndDown(n) {
+  //
+  console.log("Going up");
+  for (let i = 0; i < n; i++) {
+    console.log(i)
+  }
+  // 
+
+  console.log("At the top!\nGoing down...");
+  for (let j = n - 1; j >= 0; j--) {
+    console.log(j)
+  }
+  console.log("Back down. Bye!");
+}
+// this function has two loops. The first one is O(n) and the second one is also O(n). You might say this has a time complexity of O(2n), but we only care about the big picture. We simplify down to O(n). It doesn't matter. Even if it's 2n or 1000n, it doesn't matter because as n grows to infinity, the coefficients in front whether it's 10 or 2 million, it's so insignificant, we just describe it as o(n).
+
+
+// YET ANOTHER EXAMPLE
